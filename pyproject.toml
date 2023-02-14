@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "tower-of-hanoi-python"
+version = "0.1.0"
+description = "My solution for the Hanoi Towers math puzzle written in Python."
+authors = ["jiri.one <nemec@jiri.one>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{include = "tower_of_hanoi_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+hupper = "^1.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
