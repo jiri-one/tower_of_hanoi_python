@@ -28,22 +28,22 @@ print(dedent(f"""---------------------------
 Initial towers state
 ---------------------------"""))
 
+# get tower with smallest disk on the top
+for index, tower in enumerate(towers):
+    if len(tower) > 0:
+        if tower[-1] == 1:
+            tower_with_one = index
+            break
 
 # cycle
 while True:
-    # get tower with smallest disk on the top
-    for index, tower in enumerate(towers):
-        if len(tower) > 0:
-            if tower[-1] == 1:
-                tower_with_one = index
-                break
-
     # move smallest disk (one)
     if NUMBER_OD_DISKS % 2 == 0:
         new_tower_with_one = (tower_with_one-1)%3
     else:
         new_tower_with_one = (tower_with_one+1)%3
     move_disk(tower_with_one, new_tower_with_one)
+    tower_with_one = new_tower_with_one
 
     # break cycle when disk one is on final position 
     if towers[1] == INITIAL_TOWER:
