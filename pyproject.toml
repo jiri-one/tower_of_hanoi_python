@@ -9,8 +9,12 @@ packages = [{include = "tower_of_hanoi_python"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-hupper = "^1.11"
 
+[tool.poetry.group.tests]
+optional = true
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^7.2.1"
 
 [build-system]
 requires = ["poetry-core"]
